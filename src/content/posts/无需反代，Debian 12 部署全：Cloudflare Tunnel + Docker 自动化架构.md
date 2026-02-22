@@ -20,7 +20,6 @@ slug: Debian 12 deployment: Cloudflare Tunnel + Docker automated architecture
 
 1. 登录 [Cloudflare Zero Trust 控制台](https://one.dash.cloudflare.com/)。
 2. 进入 **Networks** -> **Tunnels**，点击 **Create a Tunnel**。
-
 ![](https://tuku-blog.0bcd6be8976b1c167d72be2963555c8b.r2.cloudflarestorage.com/2026-02-22)
 3. 选择 **Cloudflared** 并命名（如 `my-debian`）。
 ![](https://tuku-blog.0bcd6be8976b1c167d72be2963555c8b.r2.cloudflarestorage.com/PixPin_2026-02-22_20-14-35)
@@ -165,6 +164,7 @@ sudo docker compose up -d
 
 ## ![](https://tuku-blog.0bcd6be8976b1c167d72be2963555c8b.r2.cloudflarestorage.com/PixPin_2026-02-22_20-52-56.)
 
+---
 ## 四、 维护说明与安全策略
 
 1. **验证网络状态**： 执行 `docker network inspect cloudflare_net`，确保 `Containers` 列表中包含 `tunnel`、`clipcascade` 和 `ms-ra-forwarder` 三项。
