@@ -3,27 +3,28 @@ title: 无需反代，Debian 12 部署全：Cloudflare Tunnel + Docker 自动化
 pubDate: 2026-02-22
 categories: ['docker']
 description: 'No reverse proxy needed, complete Debian 12 deployment: Cloudflare Tunnel + Docker automated architecture'
-slug: Debian 12 deployment: Cloudflare Tunnel + Docker automated architecture
+slug: Cloudflare Tunnel
 ---
 
+# 🚀 无需反代，Debian 12 部署全：Cloudflare Tunnel + Docker 自动化架构
 
 这份教程集成了 **Cloudflare Tunnel（安全穿透）**、**Docker 整合网络（高效通信）** 以及 **Watchtower（自动运维）**。它将确保您的服务在“全隐身”状态下安全运行，且无需手动维护镜像更新。
 
----
 ## 一、 获取 Cloudflare Tunnel Token
 
 在操作服务器前，请先获取连接凭证：
 
 1. 登录 [Cloudflare Zero Trust 控制台](https://one.dash.cloudflare.com/)。
 2. 进入 **Networks** -> **Tunnels**，点击 **Create a Tunnel**。
-![](https://tuku-blog.0bcd6be8976b1c167d72be2963555c8b.r2.cloudflarestorage.com/2026-02-22)
+
+![](https://tb.wikihub.ch/2026-02-22)
 3. 选择 **Cloudflared** 并命名（如 `my-debian`）。
-![](https://tuku-blog.0bcd6be8976b1c167d72be2963555c8b.r2.cloudflarestorage.com/PixPin_2026-02-22_20-14-35)
-![](https://tuku-blog.0bcd6be8976b1c167d72be2963555c8b.r2.cloudflarestorage.com/PixPin_2026-02-22_20-15-10)
-![](https://tuku-blog.0bcd6be8976b1c167d72be2963555c8b.r2.cloudflarestorage.com/PixPin_2026-02-22_20-16-27)
+![](https://tb.wikihub.ch/PixPin_2026-02-22_20-14-35)
+![](https://tb.wikihub.ch/PixPin_2026-02-22_20-15-10)
+![](https://tb.wikihub.ch/PixPin_2026-02-22_20-16-27)
 4. 在 **Install and run a connector** 页面选择 **Docker**。
 5. 复制展示的代码末尾 `--token` 之后的那一串长字符串，这就是你的 **CLOUDFLARE_TOKEN**。
-![](https://tuku-blog.0bcd6be8976b1c167d72be2963555c8b.r2.cloudflarestorage.com/PixPin_2026-02-22_20-17-22..)
+![](https://tb.wikihub.ch/PixPin_2026-02-22_20-17-22..)
 
 ---
 
@@ -150,7 +151,7 @@ sudo docker compose up -d
 | **URL**          | `ms-ra-forwarder:3000` | **必须填写容器名 + 内部端口**        |
 
 
-## ![](https://tuku-blog.0bcd6be8976b1c167d72be2963555c8b.r2.cloudflarestorage.com/PixPin_2026-02-22_20-51-09)
+## ![](https://tb.wikihub.ch/PixPin_2026-02-22_20-51-09)
 
 ---
 
@@ -158,9 +159,8 @@ sudo docker compose up -d
 
 **添加新的tunnel看一下下面的图片**
 
-## ![](https://tuku-blog.0bcd6be8976b1c167d72be2963555c8b.r2.cloudflarestorage.com/PixPin_2026-02-22_20-52-56.)
+## ![](https://tb.wikihub.ch/PixPin_2026-02-22_20-52-56.)
 
----
 ## 四、 维护说明与安全策略
 
 1. **验证网络状态**： 执行 `docker network inspect cloudflare_net`，确保 `Containers` 列表中包含 `tunnel`、`clipcascade` 和 `ms-ra-forwarder` 三项。
