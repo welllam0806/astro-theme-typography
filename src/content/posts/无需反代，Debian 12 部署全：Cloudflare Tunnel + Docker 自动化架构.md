@@ -2,6 +2,14 @@
 
 ---
 
+```
+title: 无需反代，Debian 12 部署全：Cloudflare Tunnel + Docker 自动化架构
+pubDate: 2022-02-22
+categories: ['docker']
+description: 'No reverse proxy needed, complete Debian 12 deployment: Cloudflare Tunnel + Docker automated architecture'
+slug: Debian 12 deployment: Cloudflare Tunnel + Docker automated architecture
+```
+
 # 🚀 无需反代，Debian 12 部署全：Cloudflare Tunnel + Docker 自动化架构
 
 这份教程集成了 **Cloudflare Tunnel（安全穿透）**、**Docker 整合网络（高效通信）** 以及 **Watchtower（自动运维）**。它将确保您的服务在“全隐身”状态下安全运行，且无需手动维护镜像更新。
