@@ -14,19 +14,19 @@ export const defaultConfig: ThemeConfig = {
     socialLinks: [
       {
         name: 'github',
-        href: 'https://github.com/moeyua/astro-theme-typography',
+        href: 'http://github.com/',
       },
       {
-        name: 'rss',
-        href: '/atom.xml',
+        name: 'NodeSeek',
+        href: 'https://www.nodeseek.com/',
       },
       {
-        name: 'twitter',
-        href: 'https://github.com/moeyua/astro-theme-typography',
+        name: 'linux.do',
+        href: 'https://linux.do/',
       },
       {
-        name: 'mastodon',
-        href: 'https://github.com/moeyua/astro-theme-typography',
+        name: '',
+        href: '',
       },
     ],
     navLinks: [
