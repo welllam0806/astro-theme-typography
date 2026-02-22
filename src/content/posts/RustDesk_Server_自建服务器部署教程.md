@@ -1,5 +1,5 @@
 ---
-title: 搭建RuskDesk服务器
+title: RustDesk Server 自建服务器部署教程
 pubDate: 2024-10-18
 categories: ['RustDesk']
 description: ''
@@ -54,7 +54,6 @@ nano /usr/lib/systemd/system/RustDeskHbbs.service
 
 **写入以下内容：**
 
-**Ini, TOML**
 
 ```
 [Unit]
@@ -76,11 +75,12 @@ WantedBy=multi-user.target
 
 **Bash**
 
+```
 nano /usr/lib/systemd/system/RustDeskHbbr.service
+```
 
 **写入以下内容：**
 
-**Ini, TOML**
 
 ```
 [Unit]
