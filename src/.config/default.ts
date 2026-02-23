@@ -17,11 +17,11 @@ export const defaultConfig: ThemeConfig = {
         href: 'http://github.com/',
       },
       {
-        name: 'NodeSeek',
+        name: 'N',
         href: 'https://www.nodeseek.com/',
       },
       {
-        name: 'linux.do',
+        name: 'do',
         href: 'https://linux.do/',
       },
       {
