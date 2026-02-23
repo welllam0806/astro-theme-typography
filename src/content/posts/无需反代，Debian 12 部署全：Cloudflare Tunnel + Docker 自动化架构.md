@@ -6,11 +6,14 @@ description: 'No reverse proxy needed, complete Debian 12 deployment: Cloudflare
 slug: Cloudflare Tunnel
 ---
 
-# 🚀 无需反代，Debian 12 部署全：Cloudflare Tunnel + Docker 自动化架构
+# 🚀 无需反代，Debian 12 部署指南：Cloudflare Tunnel + Docker 自动化架构
 
 这份教程集成了 **Cloudflare Tunnel（安全穿透）**、**Docker 整合网络（高效通信）** 以及 **Watchtower（自动运维）**。它将确保您的服务在“全隐身”状态下安全运行，且无需手动维护镜像更新。
 
-## 一、 获取 Cloudflare Tunnel Token
+## 一、 准备工作
+(一).域名已托管：确保你的域名（如 example.com）已在 Cloudflare 解析。
+
+(二).获取 Cloudflare Tunnel Token
 
 在操作服务器前，请先获取连接凭证：
 
@@ -18,11 +21,13 @@ slug: Cloudflare Tunnel
 2. 进入 **Networks** -> **Tunnels**，点击 **Create a Tunnel**。
 
 ![](https://tb.wikihub.ch/2026-02-22)
+
 3. 选择 **Cloudflared** 并命名（如 `my-debian`）。
 ![](https://tb.wikihub.ch/PixPin_2026-02-22_20-14-35)
 ![](https://tb.wikihub.ch/PixPin_2026-02-22_20-15-10)
 ![](https://tb.wikihub.ch/PixPin_2026-02-22_20-16-27)
 4. 在 **Install and run a connector** 页面选择 **Docker**。
+
 5. 复制展示的代码末尾 `--token` 之后的那一串长字符串，这就是你的 **CLOUDFLARE_TOKEN**。
 ![](https://tb.wikihub.ch/PixPin_2026-02-22_20-17-22..)
 
