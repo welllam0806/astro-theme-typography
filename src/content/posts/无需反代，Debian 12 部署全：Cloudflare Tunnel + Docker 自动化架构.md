@@ -1,5 +1,5 @@
 ---
-title: 无需反代，Debian 12 部署全：Cloudflare Tunnel + Docker 自动化架构
+title: 无需反代，Debian 12 部署指南：Cloudflare Tunnel + Docker 自动化架构
 pubDate: 2026-02-22
 categories: ['docker']
 description: 'No reverse proxy needed, complete Debian 12 deployment: Cloudflare Tunnel + Docker automated architecture'
