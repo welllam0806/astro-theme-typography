@@ -1,5 +1,5 @@
 ---
-title: 搬瓦工 Ultra Singapore 晚高峰实测：联通回程 0% 丢包、下行 778 Mbps，但上行只跑到 95 Mbps
+title: 山东联通｜中国联通｜家庭宽带｜Bandwagon Ultra Singapore｜晚高峰测试
 pubDate: 2026-11-10
 categories: ['VPS', '网络测试']
 description: 山东联通家庭宽带直连搬瓦工新加坡 Ultra Singapore，晚高峰 300 包 0% 丢包、87ms、抖动 <1ms；下行单线 240M / 4 线 778M，上行却是 47.8M / 95.5M 且重传上万次。
