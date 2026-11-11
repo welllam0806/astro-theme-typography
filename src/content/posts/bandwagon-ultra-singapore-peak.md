@@ -1,18 +1,19 @@
 ---
-title: 山东联通｜中国联通｜家庭宽带｜Bandwagon Ultra Singapore｜白天与晚高峰测试
+title: 山东临沂｜中国联通｜家庭宽带｜Ultra Singapore｜白天与晚高峰
 pubDate: 2026-11-11
 categories: ['VPS', '网络测试']
-description: 山东联通千兆直连搬瓦工 Ultra Singapore 白天与晚高峰双时段实测：87ms / 0% 丢包；晚高峰 cubic 下北京移动单线程仅 1.0M，开 BBR 后回到 225.4M，白天三网单线程 180–420M。
+description: 山东临沂联通千兆直连搬瓦工 Ultra Singapore 白天与晚高峰双时段实测：87ms / 0% 丢包；晚高峰 cubic 下北京移动单线程仅 1.0M，开 BBR 后回到 225.4M，白天三网单线程 180–420M。
 ---
 
+山东临沂｜中国联通｜家庭宽带｜Ultra Singapore｜白天与晚高峰
 
-> 测试对象：Bandwagon Ultra Singapore（AS25820）。家用联通千兆直连，白天 11:40 与晚高峰 21:15 两轮对照，含 BBR 开启前后差异。
+> 测试对象：Ultra Singapore（AS25820，搬瓦工 Ultra 系列）。家用联通千兆直连，白天 11:40 与晚高峰 21:15 两轮对照，含 BBR 开启前后差异。
 
 ## 基本信息
 
 | 项目 | 信息 |
 | --- | --- |
-| 所在地区 | 山东（出口 IP 数据库标注） |
+| 所在地区 | 山东临沂（出口 IP 数据库标注） |
 | 网络运营商 | 中国联通 |
 | 网络类型 | 家庭宽带（千兆接入，单流实测上限约 200 Mbps） |
 | 测试机房 | Ultra Singapore（新加坡），AS25820 IT7 |
@@ -225,6 +226,33 @@ HOST: cute-buzz-2.localdomain    Loss%   Snt   Last   Avg  Best  Wrst StDev
 第 9 次   TTFB 0.171 s  总 0.442 s
 第 10 次 TTFB 0.177 s  总 0.458 s
 ```
+
+**SSH 连接稳定性（家宽 → VPS，公钥登录，2026-11-11 13:34–13:40）**
+
+| 项目 | 实测 | 说明 |
+| --- | --- | --- |
+| 完整登录耗时（20 次） | 中位 1.159 s，区间 1.078–1.230 s | TCP 握手 + 公钥认证 + 会话分配 |
+| 复用连接单次往返（60 次 / 5 分钟） | 均值 199 ms，区间 195–205 ms | 每 5 s 一次，波动 ±5 ms |
+| SSH 通道吞吐（20 MB，不经磁盘） | 上行 45.1 Mbps / 下行 63.6 Mbps | 上行与 iperf3 47.2 Mbps 吻合 |
+| scp 10 MB 落盘 | 上传 3.09 s（27.2 Mbps）/ 下载 3.13 s（26.8 Mbps） | 受家宽小主机磁盘与加密开销限制 |
+| 5 分钟内掉线 / 重连 | 0 次 | keepalive 全程未触发 |
+
+```text
+登录耗时样本（ms，20 次，rc=0 全部成功）
+1138 1153 1190 1165 1200 1177 1144 1151 1123 1154
+1205 1154 1194 1230 1120 1182 1195 1203 1078 1079
+
+复用连接往返（ms，每 5 s 一次，共 60 次，00:34:38 → 00:39:45）
+均值 199.2 / 最小 195 / 最大 205 / 失败 0
+
+SSH 通道吞吐  dd 20 MB | ssh 'cat >/dev/null'
+上行 3.720 s = 45.1 Mbps    下行 2.639 s = 63.6 Mbps
+
+scp 10 MB 落盘
+上传 3.085 s = 27.2 Mbps    下载 3.129 s = 26.8 Mbps（两端校验 10485760 字节一致）
+```
+
+登录 1.16 s 与 87 ms RTT 下约 13 次往返相符；5 分钟长连接往返稳定在 195–205 ms、零掉线，说明这条线做 SSH 日常运维没有卡顿。scp 双向掉到 27 Mbps 来自家宽侧小主机的磁盘与加密开销——同一条连接不经磁盘时上行 45.1 Mbps 已贴近 iperf3 的 47.2 Mbps，下行 63.6 Mbps 受单条 ssh 流解密限制，都不是线路瓶颈。
 
 **流媒体与 AI 服务解锁（NodeQuality IP 质量，两轮一致）**
 
@@ -837,7 +865,7 @@ iperf3 多流下行两轮合计 577–986 Mbps，上行固定受家宽限制（�
 
 | 平台 | 链接 |
 | --- | --- |
-| md5.pw | md5.pw/index.php?title=山东联通｜中国联通｜家庭宽带｜Bandwagon Ultra Singapore｜白天与晚高峰测试 |
+| md5.pw | md5.pw/index.php?title=山东临沂｜中国联通｜家庭宽带｜Ultra Singapore｜白天与晚高峰 |
 | 个人博客 | blog.wikihub.ch/posts/bandwagon-ultra-singapore-peak/ |
 | NodeQuality 白天 | Report.Check.Place/hardware/1WENN1EPZ.svg |
 | NodeQuality 晚间 | Report.Check.Place/hardware/2B0R830OL.svg |
